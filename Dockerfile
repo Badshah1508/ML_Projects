@@ -14,7 +14,7 @@ RUN pip install --no-cache-dir awscli
 # Copy only requirements first (Docker cache optimization)
 COPY requirements.txt .
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
 # Copy application code
 COPY . .
