@@ -1,6 +1,6 @@
 FROM python:3.10-slim
 
-WORKDIR /application
+WORKDIR /app
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -19,4 +19,4 @@ RUN pip install -r requirements.txt
 # Copy application code
 COPY . .
 
-CMD ["python", "application.py"]
+CMD ["python", "app.py"]
