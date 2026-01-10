@@ -8,8 +8,8 @@ app = Flask(__name__)
 
 # HOME ROUTE (VERY IMPORTANT)
 @app.route('/')
-def index():
-    return render_template('index.html')
+def home():
+    return render_template('home.html')
 
 @app.route('/predictdata', methods=['GET', 'POST'])
 def predict_datapoint():
@@ -28,9 +28,9 @@ def predict_datapoint():
         predict_pipeline = PredictPipeline()
         results = predict_pipeline.predict(pred_df)
 
-        return render_template('index.html', results=results[0])
+        return render_template('home.html', results=results[0])
 
-    return render_template('index.html')
+    return render_template('home.html')
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0",debug=True)
